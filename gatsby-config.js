@@ -1,6 +1,10 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Default Starter',
-  },
-  plugins: ['gatsby-plugin-react-helmet'],
+    siteMetadata: {
+        title: 'CWC - Creative Wedding Company'
+    },
+    plugins: [
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-styled-components'
+    ],
+    pathPrefix: `/cwc`,
 };
