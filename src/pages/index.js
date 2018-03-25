@@ -38,8 +38,8 @@ const LandingPage = () => {
             style={{
                 height: '100vh',
                 padding: '50px 0 50px 0',
-                backgroundColor: 'black',
-                color: 'white'
+                color: 'white',
+                textAlign: 'center'
             }}
         >
             <img
