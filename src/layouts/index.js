@@ -15,7 +15,7 @@ const StyledTemplate = styled.div`
 `;
 
 const StyledMainContent = styled.div`
-    background-color: #c3c3c36b;
+    background-color: #c3c3c34d;
 `;
 
 const backgroundImages = [
