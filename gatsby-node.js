@@ -13,7 +13,36 @@ const errorMessage = message => {
     console.error('***********************');
     console.log(message);
     console.error('***********************')
-}
+};
+
+const realWeddingsQuery = `
+            {
+              allWordpressPost(filter: { categories: { name: { eq: "REAL WEDDINGS" } } }) {
+                edges {
+                  node {
+                    id
+                    slug
+                    status
+                    template
+                    format
+                  }
+                }
+              }
+            }
+          `;
+
+const postSlugQuery = `
+            {
+              allWordpressPost(filter: { categories: { name: { eq: "BLOG" } } }) {
+                edges {
+                  node {
+                    id
+                    slug
+                  }
+                }
+              }
+            }
+          `;
 
 const choosePageTemplate = (page, createPage) => {
     if (!page) {
@@ -32,35 +61,48 @@ const choosePageTemplate = (page, createPage) => {
     createPage(page);
 };
 
-const createWordPressPages = (
+const createRealWeddingsPages = (
     resolve,
     reject,
     graphql,
     createPage
 ) => {
-    graphql(
-        `
-            {
-              allWordpressPost {
-                edges {
-                  node {
-                    id
-                    slug
-                    status
-                    template
-                    format
-                  }
-                }
-              }
-            }
-          `
-    ).then(result => {
-        console.log(JSON.stringify(result, null, 4));
+    const postTemplate = path.resolve(`./src/layouts/blog/post.js`);
+    graphql(realWeddingsQuery).then(result => {
         if (result.errors) {
             errorMessage(result.errors);
             reject(result.errors)
         }
-        const postTemplate = path.resolve(`./src/layouts/blog/post.js`);
+        _.each(result.data.allWordpressPost.edges, edge => {
+            logMessage(`
+                Creating wedding page
+                slug - ${edge.node.slug}
+            `);
+            createPage({
+                path: `weddings/${edge.node.slug}`,
+                component: slash(postTemplate),
+                layout: 'home',
+                context: {
+                    id: edge.node.id,
+                },
+            })
+        });
+        resolve()
+    })
+};
+
+const createBlogPostPages = (
+    resolve,
+    reject,
+    graphql,
+    createPage
+) => {
+    const postTemplate = path.resolve(`./src/layouts/blog/post.js`);
+    graphql(postSlugQuery).then(result => {
+        if (result.errors) {
+            errorMessage(result.errors);
+            reject(result.errors)
+        }
         _.each(result.data.allWordpressPost.edges, edge => {
             logMessage(`
                 Creating blog page
@@ -92,7 +134,8 @@ exports.createPages = ({
     const {createPage} = boundActionCreators;
     return new Promise((resolve, reject) => {
         choosePageTemplate(page, createPage);
-        createWordPressPages(resolve, reject, graphql, createPage);
+        createRealWeddingsPages(resolve, reject, graphql, createPage);
+        createBlogPostPages(resolve, reject, graphql, createPage);
     })
 };
 
