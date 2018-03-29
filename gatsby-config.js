@@ -9,7 +9,7 @@ module.exports = {
             resolve: "gatsby-source-wordpress",
             options: {
                 baseUrl: "cwc.liffydesigns.co.uk",
-                protocol: "http",
+                protocol: "https",
                 hostingWPCOM: false,
                 useACF: true,
                 verboseOutput: false,
