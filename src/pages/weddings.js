@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const BlogPage = ({data : {
+const Weddings = ({data : {
     allWordpressPost: {
         edges
     }
@@ -15,7 +15,7 @@ const BlogPage = ({data : {
                             {title}
                         </h1>
                         <Link
-                            to={`/blog/${slug}`}
+                            to={`/weddings/${slug}`}
                         >
                             Link to post
                         </Link>
@@ -26,11 +26,11 @@ const BlogPage = ({data : {
     </div>
 )
 
-export default BlogPage
+export default Weddings
 
 export const query = graphql`
-  query BlogPosts {
-  allWordpressPost(filter: { categories: { name: { eq: "BLOG" } } }) {
+  query Weddings {
+  allWordpressPost(filter: { categories: { name: { eq: "REAL WEDDINGS" } } }) {
     edges {
       node {
         id

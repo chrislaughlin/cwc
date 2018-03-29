@@ -3,48 +3,15 @@ const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
 
-const logMessage = message => {
-    console.log('***********************');
-    console.log(message);
-    console.log('***********************')
-};
+const realWeddingsQuery = require('./src/queries/realWeddings');
+const blogPosts = require('./src/queries/blogPosts');
+const logger = require('./src/utils/logger');
 
-const errorMessage = message => {
-    console.error('***********************');
-    console.log(message);
-    console.error('***********************')
-};
 
-const realWeddingsQuery = `
-            {
-              allWordpressPost(filter: { categories: { name: { eq: "REAL WEDDINGS" } } }) {
-                edges {
-                  node {
-                    id
-                    slug
-                    status
-                    template
-                    format
-                  }
-                }
-              }
-            }
-          `;
-
-const postSlugQuery = `
-            {
-              allWordpressPost(filter: { categories: { name: { eq: "BLOG" } } }) {
-                edges {
-                  node {
-                    id
-                    slug
-                  }
-                }
-              }
-            }
-          `;
-
-const choosePageTemplate = (page, createPage) => {
+const choosePageTemplate = (
+    page,
+    createPage
+) => {
     if (!page) {
         return;
     }
@@ -53,7 +20,7 @@ const choosePageTemplate = (page, createPage) => {
     } else {
         page.layout = "home";
     }
-    logMessage(`
+    logger.logMessage(`
         Creating page for: 
         path - ${page.path}
         layout - ${page.layout}
@@ -68,13 +35,13 @@ const createRealWeddingsPages = (
     createPage
 ) => {
     const postTemplate = path.resolve(`./src/layouts/blog/post.js`);
-    graphql(realWeddingsQuery).then(result => {
+    graphql(realWeddingsQuery.query).then(result => {
         if (result.errors) {
-            errorMessage(result.errors);
+            logger.errorMessage(result.errors);
             reject(result.errors)
         }
         _.each(result.data.allWordpressPost.edges, edge => {
-            logMessage(`
+            logger.logMessage(`
                 Creating wedding page
                 slug - ${edge.node.slug}
             `);
@@ -98,13 +65,13 @@ const createBlogPostPages = (
     createPage
 ) => {
     const postTemplate = path.resolve(`./src/layouts/blog/post.js`);
-    graphql(postSlugQuery).then(result => {
+    graphql(blogPosts.query).then(result => {
         if (result.errors) {
-            errorMessage(result.errors);
+            logger.errorMessage(result.errors);
             reject(result.errors)
         }
         _.each(result.data.allWordpressPost.edges, edge => {
-            logMessage(`
+            logger.logMessage(`
                 Creating blog page
                 slug - ${edge.node.slug}
             `);
@@ -122,9 +89,9 @@ const createBlogPostPages = (
 };
 
 exports.createPages = ({
-                           graphql,
-                           boundActionCreators,
-                           page
+    graphql,
+    boundActionCreators,
+    page
 }) => {
     console.log(JSON.stringify({
         graphql,
@@ -139,7 +106,10 @@ exports.createPages = ({
     })
 };
 
-exports.onCreatePage = async ({ page, boundActionCreators }) => {
+exports.onCreatePage = async ({
+    page,
+    boundActionCreators
+}) => {
     const { createPage } = boundActionCreators;
 
     return new Promise((resolve) => {
