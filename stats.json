@@ -9,12 +9,16 @@
       "component---src-layouts-blog-post-js-7a189c2bb0d7f05291f9.js.map"
     ],
     "path---blog": [
-      "path---blog-08c670786baad755d89e.js",
-      "path---blog-08c670786baad755d89e.js.map"
+      "path---blog-8e94741a7143f6db9434.js",
+      "path---blog-8e94741a7143f6db9434.js.map"
     ],
     "path---": [
       "path----131f9aef94525eeb6ecd.js",
       "path----131f9aef94525eeb6ecd.js.map"
+    ],
+    "component---src-pages-weddings-js": [
+      "component---src-pages-weddings-js-5e520098a32421ceed70.js",
+      "component---src-pages-weddings-js-5e520098a32421ceed70.js.map"
     ],
     "path---home": [
       "path---home-a0e39f21c11f6a62c5ab.js",
@@ -28,17 +32,17 @@
       "component---src-layouts-index-js-9cee87e2c0df48885a4b.js",
       "component---src-layouts-index-js-9cee87e2c0df48885a4b.js.map"
     ],
-    "path---page-2": [
-      "path---page-2-a0e39f21c11f6a62c5ab.js",
-      "path---page-2-a0e39f21c11f6a62c5ab.js.map"
-    ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---weddings": [
+      "path---weddings-c13f38b0fc0b94f1e7f1.js",
+      "path---weddings-c13f38b0fc0b94f1e7f1.js.map"
+    ],
     "component---src-pages-home-js": [
-      "component---src-pages-home-js-432be54f6909db801120.js",
-      "component---src-pages-home-js-432be54f6909db801120.js.map"
+      "component---src-pages-home-js-dcb6aa08505afd2a7590.js",
+      "component---src-pages-home-js-dcb6aa08505afd2a7590.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -56,14 +60,10 @@
       "component---src-pages-blog-js-cc43612b3bb6e4b46ca1.js",
       "component---src-pages-blog-js-cc43612b3bb6e4b46ca1.js.map"
     ],
-    "component---src-pages-page-2-js": [
-      "component---src-pages-page-2-js-075954cd9c4544c7dcd8.js",
-      "component---src-pages-page-2-js-075954cd9c4544c7dcd8.js.map"
-    ],
     "app": [
-      "app-fa23af359c4ef373e2fc.js",
+      "app-0086a98af6e348dbcdba.js",
       "build-js-styles.css",
-      "app-fa23af359c4ef373e2fc.js.map",
+      "app-0086a98af6e348dbcdba.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-layouts-home-js": [
