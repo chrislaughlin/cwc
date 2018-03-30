@@ -32,7 +32,7 @@
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"no test specified\" && exit 0",
     "preDeploy": "gatsby build --prefix-paths",
-    "deploy": "npm run preDeploy && preDeploygh-pages -d public",
+    "deploy": "npm run preDeploy && gh-pages -d public",
     "serve": "gatsby serve"
   },
   "devDependencies": {
