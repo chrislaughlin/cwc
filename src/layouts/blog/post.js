@@ -37,6 +37,7 @@ const Content = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    border-radius: 5px;
   }
 `;
 

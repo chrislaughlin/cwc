@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import './index.css';
 import Helmet from '../components/Helmet';
+
 import DasiyAndTim from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_DAISY_ANDTIM.jpeg'
 import KathyAndGeorge from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_KATHY_AND_GEORGE.jpg'
 import RandDB from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_RANDB.jpg'

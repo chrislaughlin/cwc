@@ -3,16 +3,20 @@ import PropTypes from 'prop-types'
 
 import Header from '../components/Header/index';
 import Helmet from '../components/Helmet/index';
+import Social from '../components/Social';
+import FlexDiv from "../components/styled/flexDiv";
+
 import './home.css'
 
 const PostsTemplate = ({ children }) => (
-    <div>
+    <FlexDiv>
         <Helmet />
         <Header />
         <div>
             {children()}
         </div>
-    </div>
+        <Social/>
+    </FlexDiv>
 )
 
 PostsTemplate.propTypes = {

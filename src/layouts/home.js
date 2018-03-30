@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 
 import Header from '../components/Header'
 import Helmet from '../components/Helmet';
+import Social from '../components/Social';
+import FlexDiv from "../components/styled/flexDiv";
+
 import './home.css'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <FlexDiv>
     <Helmet />
     <Header />
     <div
@@ -18,8 +21,10 @@ const TemplateWrapper = ({ children }) => (
       }}
     >
         {children()}
+
     </div>
-  </div>
+    <Social/>
+  </FlexDiv>
 )
 
 TemplateWrapper.propTypes = {
