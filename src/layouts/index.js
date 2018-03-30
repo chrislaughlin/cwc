@@ -1,9 +1,9 @@
 import React , { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 import './index.css';
+import Helmet from '../components/Helmet';
 import DasiyAndTim from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_DAISY_ANDTIM.jpeg'
 import KathyAndGeorge from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_KATHY_AND_GEORGE.jpg'
 import RandDB from '../images/landing/landing-slider/CREATIVE_WEDDING_COMPANY_RANDB.jpg'
@@ -55,13 +55,7 @@ class TemplateWrapper extends PureComponent {
             <StyledTemplate
                 backgroundImage={backgroundImages[this.state.index]}
             >
-                <Helmet
-                    title="CWC - Creative Wedding Company"
-                    meta={[
-                        { name: 'description', content: 'Creative Wedding Company' },
-                        { name: 'keywords', content: 'Creative, Wedding, Company' },
-                    ]}
-                />
+                <Helmet />
                 <StyledMainContent>
                     {children()}
                 </StyledMainContent>
