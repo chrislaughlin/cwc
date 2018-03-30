@@ -8,6 +8,7 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         'gatsby-image',
+        'gatsby-transformer-json',
         {
             resolve: "gatsby-source-wordpress",
             options: {

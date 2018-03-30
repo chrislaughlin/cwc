@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components';
 
 import Logo from '../../images/header/logo.png'
+import NAV_LINKS from './navLinks.json';
 import FlexDiv from '../../components/styled/flexDiv'
 
 const NavLinks = styled.ul`
@@ -33,17 +34,6 @@ const HeaderLogo = styled.img`
     max-height: 75px;
 `;
 
-const LINKS = [
-    {
-        text: 'home',
-        to: '/home'
-    },
-    {
-        text: 'blog',
-        to: '/blog'
-    }
-];
-
 const renderLink = link => {
     const {
         to,
@@ -70,7 +60,7 @@ const Header = () => {
         >
             <HeaderLogo src={Logo} />
             <NavLinks>
-                {LINKS.map(renderLink)}
+                {NAV_LINKS.map(renderLink)}
             </NavLinks>
         </FlexDiv>
     );
