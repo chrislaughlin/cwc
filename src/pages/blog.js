@@ -57,17 +57,32 @@ const ReadMore = styled(Link)`
   }
 `;
 
+const WithLink = ({className: addClassName, link, children}) => {
+    return (
+        <Link
+            to={link}
+            className={addClassName}
+        >
+            {children}
+        </Link>
+    );
+};
+
 const renderPostSummary = post => {
+    const link = `/blog/${post.slug}`;
     return (
         <Post
             key={post.slug}
         >
             <FeaturedImage src={post.featuredImage} />
-            <span
+            <WithLink
+                to={link}
                 className="post-title"
             >
-                {post.title}
-            </span>
+                <span>
+                    {post.title}
+                </span>
+            </WithLink>
             <span
                 className="post-excerpt"
                 dangerouslySetInnerHTML={{__html: post.excerpt.replace('<p>', '').replace('</p>', '')}}
@@ -75,7 +90,7 @@ const renderPostSummary = post => {
             <span>
                 <ReadMore
                     className="post-link"
-                    to={`/blog/${post.slug}`}
+                    to={link}
                 >
                     Read More
                     <FontAwesomeIcon
