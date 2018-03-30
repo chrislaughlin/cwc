@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import Arrow from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight';
+import Facebook from "@fortawesome/fontawesome-free-brands/faFacebookF";
 
 const PostList = styled.div`
   display: flex;
@@ -12,9 +15,19 @@ const PostList = styled.div`
 const Post = styled.div`
     width: 45%;
     height: 40vh;
-    margin: 20px;
+    margin: 20px 20px 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    .post-title {
+      font-size: 22px;
+      line-height: 1em;
+      font-weight: 400;
+    }
+    .post-excerpt {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 `;
 
 const FeaturedImage = styled.img`
@@ -23,27 +36,44 @@ const FeaturedImage = styled.img`
     object-fit: cover;
 `;
 
+const ReadMore = styled(Link)`
+  font-family: 'Homemade Apple', cursive;
+  opacity: 0.7;
+  :hover {
+    opacity: 1;
+  }
+  svg {
+    margin-left: 10px;
+  }
+`;
+
 const renderPostSummary = post => {
     return (
         <Post
             key={post.slug}
         >
             <FeaturedImage src={post.featuredImage} />
-            <h3
+            <span
                 className="post-title"
             >
                 {post.title}
-            </h3>
-            <p
+            </span>
+            <span
                 className="post-excerpt"
-                dangerouslySetInnerHTML={{__html: post.excerpt}}
+                dangerouslySetInnerHTML={{__html: post.excerpt.replace('<p>', '').replace('</p>', '')}}
             />
-            <Link
-                className="post-link"
-                to={`/blog/${post.slug}`}
-            >
-                Link to post
-            </Link>
+            <span>
+                <ReadMore
+                    className="post-link"
+                    to={`/blog/${post.slug}`}
+                >
+                    Read More
+                    <FontAwesomeIcon
+                        icon={Arrow}
+                        color="black"
+                    />
+                </ReadMore>
+            </span>
         </Post>
     )
 }

@@ -1,0 +1,11 @@
+@import "base.css";
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Montserrat:300|Source+Sans+Pro');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
