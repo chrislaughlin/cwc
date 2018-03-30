@@ -26,7 +26,7 @@
     "dev": "gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no test specified\" && exit 0",
     "preDeploy": "gatsby build --prefix-paths",
     "deploy": "npm run preDeploy && preDeploygh-pages -d public",
     "serve": "gatsby serve"
