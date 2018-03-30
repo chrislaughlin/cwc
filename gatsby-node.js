@@ -15,10 +15,15 @@ const choosePageTemplate = (
     if (!page) {
         return;
     }
-    if (page.path === '/') {
-        page.layout = "index";
-    } else {
-        page.layout = "home";
+    switch (page.path) {
+        case '/':
+            page.layout = "index";
+            break;
+        case '/blog/':
+            page.layout = "posts";
+            break;
+        default:
+            page.layout = "home";
     }
     logger.logMessage(`
         Creating page for: 
