@@ -1,10 +1,14 @@
 language: node_js
 node_js:
-  - "7"
+  - "stable"
+cache:
+  directories:
+  - node_modules
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  local_dir: public
   keep-history: true
   on:
     branch: master
@@ -12,6 +16,6 @@ before_script:
   - "npm i -g gatsby"
   - "npm i"
 script:
-  - "npm run preDeploy"
+  - "npm run test"
 after_success:
   - "npm run deploy"
