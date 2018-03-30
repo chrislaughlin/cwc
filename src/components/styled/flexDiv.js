@@ -7,6 +7,7 @@ const FlexDiv = styled.div`
     flex-direction: ${props => props.direction || 'column'};
     align-items: ${props => props.align || 'center'};
     justify-content: ${props => props.justifyContent || 'space-between'};
+    ${props => props.padding && `padding: ${props.padding};`}
 `;
 
 FlexDiv.propTypes = {
