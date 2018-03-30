@@ -3,7 +3,8 @@ import Link from 'gatsby-link'
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Arrow from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight';
-import Facebook from "@fortawesome/fontawesome-free-brands/faFacebookF";
+
+import { media } from "../components/styled/media";
 
 const PostList = styled.div`
   display: flex;
@@ -15,6 +16,11 @@ const PostList = styled.div`
 const Post = styled.div`
     width: 45%;
     height: 40vh;
+    ${ media.modile`
+        width: 95%;
+        height: 65vh;
+    `
+    }
     margin: 20px 20px 50px;
     display: flex;
     flex-direction: column;
@@ -25,6 +31,10 @@ const Post = styled.div`
       font-weight: 400;
     }
     .post-excerpt {
+      font-size: 14px;
+      letter-spacing: .02em;
+      line-height: 1.6em;
+      color: rgb(136, 136, 136);
       margin-top: 10px;
       margin-bottom: 10px;
     }
