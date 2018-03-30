@@ -1,6 +1,1 @@
-@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Montserrat:300');
-
-a {
-    color: inherit;
-    text-decoration: inherit;
-}
+@import "baseOverrides.css";

@@ -1,19 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import Helmet from '../components/Helmet';
 import './home.css'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet
-      title="Creative Wedding Company"
-      meta={[
-        { name: 'description', content: 'Creative Wedding Company' },
-        { name: 'keywords', content: 'weddings' },
-      ]}
-    />
+    <Helmet />
     <Header />
     <div
       style={{
