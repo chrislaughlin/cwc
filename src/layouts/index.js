@@ -65,6 +65,15 @@ class TemplateWrapper extends PureComponent {
                 <StyledMainContent>
                     {children()}
                 </StyledMainContent>
+                <div
+                    style={{
+                        display: 'none'
+                    }}
+                >
+                    <img src={DasiyAndTim} />
+                    <img src={KathyAndGeorge} />
+                    <img src={RandDB} />
+                </div>
             </StyledTemplate>
         )
     }
