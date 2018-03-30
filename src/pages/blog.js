@@ -76,12 +76,10 @@ const renderPostSummary = post => {
         >
             <FeaturedImage src={post.featuredImage} />
             <WithLink
-                to={link}
+                link={link}
                 className="post-title"
             >
-                <span>
-                    {post.title}
-                </span>
+                {post.title}
             </WithLink>
             <span
                 className="post-excerpt"

@@ -17,7 +17,6 @@ const TemplateWrapper = ({ children }) => (
         paddingTop: 0,
       }}
     >
-        HOME LAYOUT
         {children()}
     </div>
   </div>
