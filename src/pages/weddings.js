@@ -5,25 +5,13 @@ import styled, { css } from 'styled-components';
 import FlexDiv from '../components/styled/flexDiv';
 import {media} from "../components/styled/media";
 
-const narrow = css`
-  width: 45%;
-  height: 40vh;
-`;
-
-const wide = css`
-  width: 95%;
-  height: 40vh;
-`
-
 const Weddings = styled(FlexDiv)`
   flex-wrap: wrap;
   flex-direction: row;
   .wedding {
-    margin: 10px;
-    ${narrow}
-  }
-  .wedding:nth-child(3n) {
-    ${wide}
+    margin: 5px;
+    width: 48%;
+    height: 40vh;
   }
 `;
 
@@ -44,18 +32,19 @@ const FeaturedImage = styled.img`
 `;
 
 const Title = styled.span`
+    font-family: 'Montserrat', sans-serif;
     z-index: 1;
     position: absolute;
     bottom: 15px;
     right: 10px;
-    color: white;
+    color: #08080859;
     font-size: 26px;
     letter-spacing: 4px;
     line-height: 40px;
     text-align: right;
     text-transform: uppercase;
     width: 50%;
-    background-color: #08080859;
+    background-color: #ffffff8c;
 `;
 
 const WeddingsPage = ({data : {

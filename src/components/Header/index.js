@@ -17,6 +17,7 @@ const NavItem = styled.li`
     margin: 0 10px 0 10px;
     color: #aaa;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     .active, :hover {
     color: #333;
