@@ -8,6 +8,7 @@ const Title = styled.p`
   font-size: 29px;
   margin-bottom: 30px;
   text-align: center;
+  color: #B39FB6;
 `;
 
 const Content = styled.div`
@@ -26,6 +27,14 @@ const Content = styled.div`
     font-size: 36px;
     margin-top: 20px;
     text-align: center;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
   }
   p {
     font-size: 15px;
