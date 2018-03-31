@@ -19,35 +19,6 @@ const Content = styled.div`
   letter-spacing: 0.3px;
   word-wrap: break-word;
   margin: 0 20px 0 20px;
-  h1 {
-    ${HOMEMADE_APPLE_FONT};
-    background-color: rgba(255, 255, 255, 0);
-    box-shadow: rgba(255, 255, 255, 0) 16.5616px 0px 0px 0px, rgba(255, 255, 255, 0) -16.5616px 0px 0px 0px;
-    color: #B39FB6;
-    font-size: 36px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  h3 {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    line-height: 19px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  p {
-    font-size: 15px;
-    font-weight: 300;
-  }
-  strong {
-    font-weight: 700;
-  }
-  img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-  }
 `;
 
 const PostTemplate = ({
