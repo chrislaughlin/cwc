@@ -1,18 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import Testimonial from "../components/Testimonial/testimonial";
+
 const IndexPage = () => (
     <div>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <p>
-            <Link to="/blog/">Go to BLOG</Link>
-        </p>
-        <p>
-            <Link to="/weddings/">Go to Weddings</Link>
-        </p>
+        <Testimonial
+            message="Absolutely love my invites... so unique... you did a fantastic job Louise... Thank you so much..x"
+            from="KATHY & GEORGE, AUGUST 2016"
+        />
     </div>
-)
+);
 
 export default IndexPage
