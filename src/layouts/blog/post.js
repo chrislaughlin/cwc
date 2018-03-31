@@ -28,7 +28,7 @@ const Content = styled.div`
     text-align: center;
   }
   p {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
   }
   strong {

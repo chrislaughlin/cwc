@@ -31,19 +31,24 @@ const FeaturedImage = styled.img`
     }
 `;
 
-const Title = styled.span`
+const Title = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
     z-index: 1;
     position: absolute;
-    bottom: 15px;
-    right: 10px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 25%;
+    text-align: center;
     color: #08080859;
     font-size: 26px;
     letter-spacing: 4px;
     line-height: 40px;
-    text-align: right;
     text-transform: uppercase;
-    width: 50%;
     background-color: #ffffff8c;
 `;
 
@@ -63,9 +68,11 @@ const WeddingsPage = ({data : {
                         <Link
                             to={`weddings/${slug}`}
                         >
-                            <Title
-                                dangerouslySetInnerHTML={{__html: title}}
-                            />
+                            <Title>
+                                <span
+                                    dangerouslySetInnerHTML={{__html: title}}
+                                />
+                            </Title>
                             <FeaturedImage
                                 src={source_url}
                             />
