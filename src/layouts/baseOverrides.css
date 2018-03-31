@@ -18,3 +18,7 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+img {
+    border-radius: 5px;
+}
