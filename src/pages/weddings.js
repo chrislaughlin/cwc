@@ -88,7 +88,7 @@ export default WeddingsPage;
 
 export const query = graphql`
   query Weddings {
-  allWordpressPost(filter: { categories: { name: { eq: "REAL WEDDINGS" } } }) {
+  allWordpressPost(sort: {fields: [date], order: ASC} filter: { categories: { name: { eq: "REAL WEDDINGS" } } }) {
     edges {
       node {
         slug
