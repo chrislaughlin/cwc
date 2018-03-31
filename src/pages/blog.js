@@ -19,8 +19,7 @@ const Post = styled.div`
     ${ media.modile`
         width: 95%;
         height: 65vh;
-    `
-    }
+    `}
     margin: 20px 20px 50px;
     display: flex;
     flex-direction: column;

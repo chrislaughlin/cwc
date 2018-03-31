@@ -4,6 +4,10 @@
         "to": "/home"
     },
     {
+        "text": "real weddings",
+        "to": "/weddings"
+    },
+    {
         "text": "blog",
         "to": "/blog"
     }
