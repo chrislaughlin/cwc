@@ -3,17 +3,18 @@ import Link from 'gatsby-link'
 import styled from 'styled-components';
 
 import LandingLogo from '../images/landing/landing-logo.png';
+import UnderCon from '../images/landing/under-construction.png'
 import FlexDiv from '../components/styled/flexDiv';
 import Social from '../components/Social';
 
 const Title = styled.span`
   font-family: 'Montserrat', sans-serif;
-  font-size: 23px;
+  font-size: 32px;
   margin-bottom: 10px;
 `;
 const SubTitle = styled.span`
   font-family: 'Homemade Apple', cursive;
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 400;
   margin-bottom: 10px;
 `;
@@ -32,6 +33,15 @@ const EnterButton = styled.button`
     }
 `;
 
+const InfoText = styled.span`
+  width: 60%;
+  font-size: 23px;
+  color: black;
+  font-weight: bolder;
+  a {
+    color: #B39FB6;
+  }
+`;
 const LandingPage = () => {
     return (
         <FlexDiv
@@ -55,15 +65,15 @@ const LandingPage = () => {
                 <SubTitle>
                     have your big day, your way
                 </SubTitle>
-                <span>
-                    <EnterButton>
-                        <Link
-                            to="/home"
-                        >
-                            ENTER
-                        </Link>
-                    </EnterButton>
-                </span>
+                <InfoText>
+                    We are currently upgrading and improving our site. In the mean time you can look at our packages
+                    and services on our
+                    <a
+                        href="https://www.facebook.com/creativeweddingcompany"
+                    >
+                        Facebook page
+                    </a>.
+                </InfoText>
             </FlexDiv>
             <Social/>
         </FlexDiv>
