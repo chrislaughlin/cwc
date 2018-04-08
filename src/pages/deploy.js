@@ -1,8 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import styled from 'styled-components';
-import Recaptcha from 'react-recaptcha';
-import Component from '@reactions/component'
 
 import FlexDiv from "../components/styled/flexDiv";
 
@@ -35,33 +33,12 @@ const triggerDeploy = () => {
 const Deploy = () => {
     return (
         <FlexDiv>
-            <Component
-                initialState={{verified: false}}
+            <DeployButton
+                onClick={triggerDeploy}
             >
-                {({state, setState}) => {
-                    console.log({state});
-                    return (
-                        <Fragment>
-                            <Recaptcha
-                                sitekey="6Lcm1lEUAAAAAMWY9TtdSqytTAT5cxmZ_4rim1CE"
-                                verifyCallback={response => {
-                                    console.log({response});
-                                    console.log('VERIFIED');
-                                    setState({verified: true})
-                                }}
-                            />
-                            <DeployButton
-                                onClick={triggerDeploy}
-                                disabled={!state.verified}
-                            >
-                                Deploy
-                            </DeployButton>
-                            <ToastContainer />
-                        </Fragment>
-                    )
-                }}
-
-            </Component>
+                Deploy
+            </DeployButton>
+            <ToastContainer />
         </FlexDiv>
     )
 };
