@@ -3,6 +3,7 @@ module.exports = {
         title: 'CWC - Creative Wedding Company'
     },
     plugins: [
+        `gatsby-plugin-react-next`,
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-styled-components',
         'gatsby-transformer-sharp',
