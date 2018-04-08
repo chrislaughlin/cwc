@@ -9,7 +9,9 @@ const CustomHelmet = () => {
                 { name: 'description', content: 'Creative Wedding Company' },
                 { name: 'keywords', content: 'weddings' },
             ]}
-        />
+        >
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </Helmet>
     );
 };
 
