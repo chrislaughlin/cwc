@@ -38,10 +38,13 @@ const InfoText = styled.span`
   font-size: 23px;
   color: black;
   font-weight: bolder;
-  a {
-    color: #B39FB6;
-  }
 `;
+
+const FacebookLink = styled.a`
+  padding-left: 5px;
+  color: white;
+`;
+
 const LandingPage = () => {
     return (
         <FlexDiv
@@ -68,14 +71,16 @@ const LandingPage = () => {
                 <InfoText>
                     We are currently upgrading and improving our site. In the mean time you can look at our packages
                     and services on our
-                    <a
+                    <FacebookLink
                         href="https://www.facebook.com/creativeweddingcompany"
                     >
                         Facebook page
-                    </a>.
+                    </FacebookLink>
                 </InfoText>
             </FlexDiv>
-            <Social/>
+            <Social
+                size="5x"
+            />
         </FlexDiv>
     )
 }

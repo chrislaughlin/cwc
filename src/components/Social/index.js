@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Facebook from '@fortawesome/fontawesome-free-brands/faFacebookF';
 import Twitter from '@fortawesome/fontawesome-free-brands/faTwitter';
@@ -19,7 +20,9 @@ const StyledSocial = styled.ul`
   }
 `;
 
-const Social = () => {
+const Social = ({
+    size = 'lg'
+}) => {
     return (
         <StyledSocial>
             <li>
@@ -27,7 +30,7 @@ const Social = () => {
                     href="https://www.facebook.com/creativeweddingcompany"
                     target="_blank"
                 >
-                    <FontAwesomeIcon icon={Facebook} size="lg" color="black" />
+                    <FontAwesomeIcon icon={Facebook} size={size} color="black" />
                 </a>
             </li>
             <li>
@@ -35,7 +38,7 @@ const Social = () => {
                     href="https://twitter.com/cwcstationery"
                     target="_blank"
                 >
-                    <FontAwesomeIcon icon={Twitter} size="lg" color="black" />
+                    <FontAwesomeIcon icon={Twitter} size={size} color="black" />
                 </a>
             </li>
             <li>
@@ -43,7 +46,7 @@ const Social = () => {
                     href="https://www.instagram.com/creativeweddingcompany/"
                     target="_blank"
                 >
-                    <FontAwesomeIcon icon={Instagram} size="lg" color="black" />
+                    <FontAwesomeIcon icon={Instagram} size={size} color="black" />
                 </a>
             </li>
             <li>
@@ -51,11 +54,15 @@ const Social = () => {
                     href="https://www.pinterest.com/cwcstationery/"
                     target="_blank"
                 >
-                    <FontAwesomeIcon icon={Pintrest} size="lg" color="black" />
+                    <FontAwesomeIcon icon={Pintrest} size={size} color="black" />
                 </a>
             </li>
         </StyledSocial>
     );
+};
+
+Social.propTypes = {
+    size: PropTypes.string
 };
 
 export default Social;
